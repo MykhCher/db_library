@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Customer.init({
-    fullname: {
+    full_name: {
       type: DataTypes.STRING,
       allowNull: false
     },

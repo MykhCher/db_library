@@ -9,7 +9,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      fullname: {
+      full_name: {
         type: Sequelize.STRING,
         allowNull: false,
       },
@@ -36,7 +36,7 @@ module.exports = {
     {
       uniqueKeys: {
         compositeIndex: {
-          fields: ['fullname', 'email']
+          fields: ['full_name', 'email']
         }
       }
     });
