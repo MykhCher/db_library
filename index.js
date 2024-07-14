@@ -1,5 +1,7 @@
 const db = require('./src/db/models');
 
+
+
 const dbCheck = async () => {
     try {
         await db.sequelize.authenticate();
@@ -22,7 +24,7 @@ dbCheck();
     
 }
 
-dropCustomers();
+// dropCustomers();
 
  const createCustomers = async () => {
     try {
@@ -33,4 +35,13 @@ dropCustomers();
     }
 } 
 
-createCustomers();
+// createCustomers();
+const addItems = async (model, values) => {
+    try {
+        await model.bulkCreate(values, {fields:['title', 'description', 'createdAt', 'updatedAt']} );
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+
+addItems(db.Shelf, require('./src/constants/shelves'));
